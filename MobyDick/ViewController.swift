@@ -64,8 +64,7 @@ class ViewController: UIViewController, WKUIDelegate, WKScriptMessageHandler {
     @IBAction func colorChosen(_ sender: UISegmentedControl) {
         let color = divColors[sender.selectedSegmentIndex]
         
-        var js = "document.getElementById('box').style.backgroundColor = '\(color)';";
-        js += "document.getElementById('box').innerHTML = '\(color)'"
+        let js = "document.getElementById('body').style.backgroundColor = '\(color)';"
         webView.evaluateJavaScript(js) { (ret, error) in
             print(ret ?? "whoops")
         }
